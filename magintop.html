@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>margin-top击穿现象</title>
+    <style>
+        body,div{
+            margin:0;
+            padding:0;
+        }
+        .d1{
+            background: pink;
+            margin:0 auto;
+            width:100%;
+            height:400px;
+            /* 方法一 给父元素添加padding 去掉子元素margin-top*/
+            /* padding-top:100px; */
+            /* border-top:100px solid red; */
+            /* 方法二 为父元素添加 overflow:hidden */
+            /* overflow: hidden; */
+        }
+        .d2{
+            background:green;
+            width:80%;
+            height:100px;
+            /* margin-top:100px; */
+            position:relative;
+            top:100px;
+
+        }
+    </style>
+
+</head>
+<body>
+    <div class="d1">
+        <div class="d2"></div>
+    </div>
+</body>
+</html>
